@@ -8,78 +8,17 @@ const pythonCourse = {
     {
       id: "p1",
       title: "1. Python Setup & Basics",
-      content: `
-# 1. Python Setup and Basics
-Welcome to Python! Python is a high-level, interpreted programming language known for its strict syntax rules regarding indentation and its highly readable nature.
-
-## The Print Statement
-The \`print()\` function outputs text to the console.
-\`\`\`python
-print("I love pizza!")
-print("It's really good!")
-\`\`\`
-
-## Variables and Data Types
-A variable is a container for storing a data value. Python is dynamically typed.
-- **String (str):** A series of characters enclosed in quotes.
-- **Integer (int):** A whole number without a decimal point.
-- **Float (float):** A numeric value with a decimal component.
-- **Boolean (bool):** Represents \`True\` or \`False\`.
-
-\`\`\`python
-name = "Bro" 
-age = 21 
-height = 250.5 
-human = True 
-\`\`\`
-      `
+      content: "# 1. Python Setup and Basics\nWelcome to Python! Python is a high-level, interpreted programming language known for its strict syntax rules regarding indentation and its highly readable nature.\n\n## The Print Statement\nThe `print()` function outputs text to the console.\n```python\nprint(\"I love pizza!\")\nprint(\"It's really good!\")\n```\n\n## Variables and Data Types\nA variable is a container for storing a data value. Python is dynamically typed.\n- **String (str):** A series of characters enclosed in quotes.\n- **Integer (int):** A whole number without a decimal point.\n- **Float (float):** A numeric value with a decimal component.\n- **Boolean (bool):** Represents `True` or `False`.\n\n```python\nname = \"Bro\"\nage = 21\nheight = 250.5\nhuman = True\n```\n"
     },
     {
       id: "p2",
       title: "2. String Methods & Math",
-      content: `
-# 2. Strings and Math Functions
-
-## String Methods
-Strings are objects in Python, meaning they have built-in methods you can call using the dot notation (\`.\`).
-\`\`\`python
-name = "Bro Code"
-print(len(name))       # Output: 8
-print(name.find("o"))  # Output: 2
-print(name.upper())    # "BRO CODE"
-\`\`\`
-
-## Typecasting
-Typecasting is converting a variable from one data type to another.
-\`\`\`python
-x = 1   # int
-x = float(x) # becomes 1.0
-\`\`\`
-      `
+      content: "# 2. Strings and Math Functions\n\n## String Methods\nStrings are objects in Python, meaning they have built-in methods you can call using the dot notation (`.`).\n```python\nname = \"Bro Code\"\nprint(len(name))       # Output: 8\nprint(name.find(\"o\"))  # Output: 2\nprint(name.upper())    # \"BRO CODE\"\n```\n\n## Typecasting\nTypecasting is converting a variable from one data type to another.\n```python\nx = 1   # int\nx = float(x) # becomes 1.0\n```\n"
     },
     {
       id: "p3",
       title: "3. Slicing & Control Flow",
-      content: `
-# 3. String Slicing and Control Flow
-
-## String Slicing
-Slicing extracts elements from another string using the syntax \`[start:stop:step]\`.
-\`\`\`python
-name = "Bro Code"
-first_name = name[0:3] # "Bro"
-\`\`\`
-
-## If Statements
-Control the flow of your program using boolean conditions.
-\`\`\`python
-age = 18
-if age >= 18:
-    print("You are an adult!")
-else:
-    print("You are a child!")
-\`\`\`
-      `
+      content: "# 3. String Slicing and Control Flow\n\n## String Slicing\nSlicing extracts elements from another string using the syntax `[start:stop:step]`.\n```python\nname = \"Bro Code\"\nfirst_name = name[0:3] # \"Bro\"\n```\n\n## If Statements\nControl the flow of your program using boolean conditions.\n```python\nage = 18\nif age >= 18:\n    print(\"You are an adult!\")\nelse:\n    print(\"You are a child!\")\n```\n"
     }
   ],
   flashcards: [
@@ -110,47 +49,17 @@ const ictCourse = {
     {
       id: "i9.6",
       title: "9.6 IDEs (Integrated Dev Environments)",
-      content: `
-# 9.6 Basic features of an Integrated Development Environment (IDE)
-
-## Simple Explanation
-An IDE gives you a single "workshop" (like PyCharm, VS Code, or IDLE) that contains everything you need to write, test, and fix your code efficiently.
-
-## Technical Deep Dive
-*   **Opening/Saving:** Manage projects easily.
-*   **Compiling/Interpreting:** Translating source code into machine code. 
-*   **Executing (Running):** Running the translated code.
-*   **Debugging:** Pause execution (using *breakpoints*) and step through code line-by-line to find logical errors.
-      `
+      content: "# 9.6 Basic features of an Integrated Development Environment (IDE)\n\n## Simple Explanation\nAn IDE gives you a single \"workshop\" (like PyCharm, VS Code, or IDLE) that contains everything you need to write, test, and fix your code efficiently.\n\n## Technical Deep Dive\n*   **Opening/Saving:** Manage projects easily.\n*   **Compiling/Interpreting:** Translating source code into machine code.\n*   **Executing (Running):** Running the translated code.\n*   **Debugging:** Pause execution (using *breakpoints*) and step through code line-by-line to find logical errors.\n"
     },
     {
       id: "i9.7",
       title: "9.7 Imperative Programming",
-      content: `
-# 9.7 Imperative Programming 
-
-## Simple Explanation
-You are the boss giving the computer a sequence of direct commands to change its state and achieve a result.
-
-## Core Concepts
-*   **Structure:** Sequential execution.
-*   **Primitive Data Types:** Integer, Float, Character, Boolean.
-*   **Operators:** Arithmetic (\`+\`, \`-\`, \`*\`, \`/\`, \`%\`), Assignment (\`=\`).
-*   **I/O:** Input and Output.
-      `
+      content: "# 9.7 Imperative Programming\n\n## Simple Explanation\nYou are the boss giving the computer a sequence of direct commands to change its state and achieve a result.\n\n## Core Concepts\n*   **Structure:** Sequential execution.\n*   **Primitive Data Types:** Integer, Float, Character, Boolean.\n*   **Operators:** Arithmetic (`+`, `-`, `*`, `/`, `%`), Assignment (`=`).\n*   **I/O:** Input and Output.\n"
     },
     {
       id: "i9.8",
       title: "9.8 Control Structures",
-      content: `
-# 9.8 Control Structures
-
-Control structures alter the sequential flow of execution, allowing programs to make decisions or repeat tasks.
-
-1. **Sequence:** Default line-by-line execution.
-2. **Selection:** Decision making using \`if\`, \`else\`, or \`switch/case\`.
-3. **Repetition:** Looping via \`for\` (fixed iterations) or \`while\` (condition-based).
-      `
+      content: "# 9.8 Control Structures\n\nControl structures alter the sequential flow of execution, allowing programs to make decisions or repeat tasks.\n\n1. **Sequence:** Default line-by-line execution.\n2. **Selection:** Decision making using `if`, `else`, or `switch/case`.\n3. **Repetition:** Looping via `for` (fixed iterations) or `while` (condition-based).\n"
     }
   ],
   flashcards: [
@@ -226,11 +135,11 @@ function goToDashboard() {
 function switchTab(tabId) {
   // Update Nav Buttons
   document.querySelectorAll('.nav-btn').forEach(btn => btn.classList.remove('nav-active'));
-  document.getElementById(`nav-${tabId}`).classList.add('nav-active');
+  document.getElementById("nav-" + tabId).classList.add('nav-active');
 
   // Update Tab Content
   document.querySelectorAll('.tab-content').forEach(tab => tab.classList.add('view-hidden'));
-  document.getElementById(`tab-${tabId}`).classList.remove('view-hidden');
+  document.getElementById("tab-" + tabId).classList.remove('view-hidden');
 
   closeSidebarIfOpen();
 }
@@ -270,7 +179,11 @@ function loadModule(id, btnElement) {
   // Parse Markdown and Display
   const moduleData = currentTrackData.modules.find(m => m.id === id);
   if (moduleData) {
-    lessonContent.innerHTML = marked.parse(moduleData.content);
+    if (typeof marked !== 'undefined' && typeof marked.parse === 'function') {
+      lessonContent.innerHTML = marked.parse(moduleData.content);
+    } else {
+      lessonContent.innerHTML = "<p>Error loading Markdown parser. Please check your internet connection.</p>";
+    }
   }
 }
 
@@ -289,7 +202,7 @@ function updateFlashcardUI() {
   const cards = currentTrackData.flashcards;
   const currentCard = cards[currentCardIndex];
 
-  document.getElementById('flashcard-counter').innerText = \`Card \${currentCardIndex + 1} of \${cards.length}\`;
+  document.getElementById('flashcard-counter').innerText = "Card " + (currentCardIndex + 1) + " of " + cards.length;
   document.getElementById('flashcard-front').innerText = currentCard.front;
   document.getElementById('flashcard-back').innerText = currentCard.back;
   
@@ -359,8 +272,8 @@ function restartQuiz() {
 function renderQuestion() {
   const q = shuffledQuiz[currentQuizIndex];
   
-  document.getElementById('quiz-counter').innerText = \`Question \${currentQuizIndex + 1} of \${shuffledQuiz.length}\`;
-  document.getElementById('quiz-current-score').innerText = \`Score: \${quizScore}\`;
+  document.getElementById('quiz-counter').innerText = "Question " + (currentQuizIndex + 1) + " of " + shuffledQuiz.length;
+  document.getElementById('quiz-current-score').innerText = "Score: " + quizScore;
   document.getElementById('quiz-question-text').innerText = q.question;
   
   const optionsContainer = document.getElementById('quiz-options-container');
@@ -381,13 +294,13 @@ function renderQuestion() {
     
     // Icon placeholder
     const iconSpan = document.createElement('span');
-    iconSpan.id = \`opt-icon-\${index}\`;
+    iconSpan.id = "opt-icon-" + index;
     div.appendChild(iconSpan);
     
     btn.appendChild(div);
     
     btn.onclick = () => selectAnswer(index);
-    btn.id = \`opt-btn-\${index}\`;
+    btn.id = "opt-btn-" + index;
     
     optionsContainer.appendChild(btn);
   });
@@ -407,15 +320,15 @@ function selectAnswer(index) {
   
   // Update Buttons
   q.options.forEach((opt, i) => {
-    const btn = document.getElementById(\`opt-btn-\${i}\`);
+    const btn = document.getElementById("opt-btn-" + i);
     btn.disabled = true;
     
     if (i === q.correctAnswer) {
       btn.classList.add('correct');
-      document.getElementById(\`opt-icon-\${i}\`).innerHTML = '<i data-lucide="check-circle" color="#10b981"></i>';
+      document.getElementById("opt-icon-" + i).innerHTML = '<i data-lucide="check-circle" color="#10b981"></i>';
     } else if (i === index) {
       btn.classList.add('wrong');
-      document.getElementById(\`opt-icon-\${i}\`).innerHTML = '<i data-lucide="x-circle" color="#ef4444"></i>';
+      document.getElementById("opt-icon-" + i).innerHTML = '<i data-lucide="x-circle" color="#ef4444"></i>';
     }
   });
   lucide.createIcons();
@@ -442,7 +355,7 @@ function nextQuestion() {
     const scoreView = document.getElementById('quiz-score-view');
     scoreView.classList.remove('view-hidden');
     
-    document.getElementById('final-score-text').innerText = \`\${quizScore} / \${shuffledQuiz.length}\`;
+    document.getElementById('final-score-text').innerText = quizScore + " / " + shuffledQuiz.length;
     document.getElementById('final-score-message').innerText = 
       quizScore === shuffledQuiz.length ? "Perfect score! You are a master! 🏆" : "Great job! Keep practicing to improve your skills.";
   }
