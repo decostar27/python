@@ -1,13 +1,169 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>python-course</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dual-Track Learning Platform</title>
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Fira+Code&display=swap" rel="stylesheet">
+  
+  <!-- Marked.js for Markdown parsing -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+  <!-- Dashboard View (Initially Visible) -->
+  <div id="dashboard-view" class="view-active">
+    <div class="dashboard-container">
+      <h1 class="dashboard-header">Select Your Learning Track</h1>
+      <div class="track-cards-grid">
+        
+        <div class="glass-panel track-card" onclick="selectTrack('python')">
+          <h2><i data-lucide="code-2"></i> Python Mastery</h2>
+          <p>Comprehensive 12-hour Python course covering everything from print statements to building a Snake Game in Tkinter.</p>
+          <button class="btn-primary">Start Python Course</button>
+        </div>
+
+        <div class="glass-panel track-card" onclick="selectTrack('ict')">
+          <h2><i data-lucide="monitor"></i> ICT A/L Master</h2>
+          <p>A comprehensive guide to Competencies 9, 10, and 11 covering Programming, Web Development, and IoT for Advanced Level ICT.</p>
+          <button class="btn-primary btn-secondary">Start ICT Course</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- App View (Initially Hidden) -->
+  <div id="app-view" class="view-hidden">
+    
+    <!-- Mobile Menu Button -->
+    <button class="mobile-menu-btn" onclick="toggleSidebar()">
+      <i data-lucide="menu"></i>
+    </button>
+
+    <!-- Sidebar -->
+    <div id="sidebar" class="sidebar">
+      <div class="brand" id="brand-title">
+        <i data-lucide="book-open"></i> Course Master
+      </div>
+      
+      <button class="nav-btn btn-back" onclick="goToDashboard()">
+        <i data-lucide="arrow-left"></i> Back to Dashboard
+      </button>
+
+      <button class="nav-btn nav-active" id="nav-course" onclick="switchTab('course')">
+        <i data-lucide="book"></i> Course Modules
+      </button>
+      
+      <button class="nav-btn" id="nav-flashcards" onclick="switchTab('flashcards')">
+        <i data-lucide="layers"></i> Flashcards
+      </button>
+      
+      <button class="nav-btn" id="nav-practice" onclick="switchTab('practice')">
+        <i data-lucide="check-square"></i> Practice Arena
+      </button>
+    </div>
+
+    <!-- Main Content Area -->
+    <div class="main-content" onclick="closeSidebarIfOpen()">
+      
+      <!-- Course Modules Tab -->
+      <div id="tab-course" class="tab-content tab-active" style="display: flex; gap: 32px; height: 100%;">
+        <div class="module-sidebar">
+          <h2 style="margin-bottom: 24px;">Modules</h2>
+          <div class="module-list" id="module-list">
+            <!-- Injected by JS -->
+          </div>
+        </div>
+        <div class="glass-panel module-main">
+          <div class="lesson-content" id="lesson-content">
+            <!-- Injected by JS -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Flashcards Tab -->
+      <div id="tab-flashcards" class="tab-content view-hidden">
+        <div class="flashcards-container">
+          <div style="color: var(--text-muted);" id="flashcard-counter">
+            Card 1 of X
+          </div>
+
+          <div class="card-scene" onclick="flipCard()">
+            <div class="card" id="flashcard-element">
+              <div class="card-face card-front" id="flashcard-front">Front</div>
+              <div class="card-face card-back" id="flashcard-back">Back</div>
+            </div>
+          </div>
+
+          <div class="controls">
+            <button class="btn-primary" onclick="prevCard()">
+              <i data-lucide="chevron-left"></i> Prev
+            </button>
+            <button class="btn-primary" onclick="flipCard()">
+              <i data-lucide="rotate-cw"></i> Flip
+            </button>
+            <button class="btn-primary" onclick="nextCard()">
+              Next <i data-lucide="chevron-right"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Practice Arena Tab -->
+      <div id="tab-practice" class="tab-content view-hidden">
+        <div class="quiz-container">
+          
+          <!-- Score Display -->
+          <div id="quiz-score-view" class="glass-panel score-display view-hidden">
+            <h2>Quiz Complete!</h2>
+            <div class="score-text" id="final-score-text">0 / 0</div>
+            <p id="final-score-message">Great job!</p>
+            <button class="btn-primary" onclick="restartQuiz()" style="margin: 24px auto 0;">
+              <i data-lucide="rotate-ccw"></i> Try Again (Shuffle)
+            </button>
+          </div>
+
+          <!-- Question View -->
+          <div id="quiz-question-view" class="glass-panel question-card">
+            <div style="display: flex; justify-content: space-between; margin-bottom: 16px; color: var(--text-muted);">
+              <span id="quiz-counter">Question 1 of X</span>
+              <span id="quiz-current-score">Score: 0</span>
+            </div>
+            <h2 class="question-text" id="quiz-question-text">Question?</h2>
+            
+            <div class="options-grid" id="quiz-options-container">
+              <!-- Injected by JS -->
+            </div>
+
+            <div id="quiz-explanation-view" class="explanation view-hidden">
+              <strong id="quiz-explanation-title">Correct!</strong> 
+              <br/>
+              <span id="quiz-explanation-text">Because...</span>
+              <div style="margin-top: 16px; display: flex; justify-content: flex-end;">
+                <button class="btn-primary" onclick="nextQuestion()" id="quiz-next-btn">
+                  Next Question
+                </button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
 </html>
